@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h2>LOGIN</h2>
+        <p>KRISTU JAYANTI COLLEGE</p>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ0cVy8i0AGrnWii4jxClfsRBzILi6faKBQ&s">
+    </div>
+
+    <div class="right">
+        <h2>Login</h2>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">LOGIN</button>
+        </form>
+
+        <p>{{ message }}</p>
+    </div>
+
+</div>
+
+</body>
+</html>

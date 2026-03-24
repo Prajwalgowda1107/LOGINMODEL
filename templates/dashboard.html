@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS (IMPORTANT: keep this exact for Flask) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+  <title>Dashboard</title>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+  <div class="logo">○ COMPANY</div>
+
+  <nav class="nav-center">
+    <a href="#">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#" onclick="openModal()">CONTACT</a>
+  </nav>
+
+  <div class="nav-right">
+    <span>🔍</span>
+    <button class="signin">SIGN IN</button>
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="content">
+
+    <h1>WELCOME, {{ user|upper }}</h1>
+
+    {% if request.args.get('success') %}
+      <p class="success-msg">Request sent successfully!</p>
+    {% endif %}
+
+    <p>Access granted. You're now in your control center — where ideas turn into execution.</p>
+
+    <button class="btn">LEARN MORE</button>
+
+  </div>
+</section>
+
+<!-- CONTACT MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <h2>Contact Us</h2>
+
+    <form method="POST" action="/contact">
+      <textarea name="message" placeholder="Describe your problem..." required></textarea>
+      <button type="submit" class="send">Send</button>
+    </form>
+
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

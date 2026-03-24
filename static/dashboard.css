@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+/* LOGO */
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* CENTER NAV */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 2px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-center a:hover {
+  color: white;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff0077, #00aaff);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.signin {
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.signin:hover {
+  border-color: #ff0077;
+  color: #ff0077;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* GLOW BACKGROUND */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(90deg, #ff0077, #00aaff);
+  opacity: 0.2;
+  filter: blur(120px);
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* TITLE */
+.content h1 {
+  font-size: 55px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  background: linear-gradient(90deg, #ff0077, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SUCCESS MSG */
+.success-msg {
+  margin-top: 10px;
+  color: #00ffcc;
+  font-weight: 600;
+}
+
+/* TEXT */
+.content p {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #ff0077;
+  color: white;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-box textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.send {
+  margin-top: 10px;
+  background: green;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+}
